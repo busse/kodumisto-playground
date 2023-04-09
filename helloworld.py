@@ -1,5 +1,1 @@
-# Hello World file
-
-print("Hello Wrold")
-
-#Edn
+<built-in method splitlines of bytes object at 0x110b748f0> TEST2
