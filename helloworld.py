@@ -1,5 +1,3 @@
 # Hello World file
 
-print("Hello Wrold")
-
-#Edn
+print("Hola Mundo")
