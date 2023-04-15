@@ -1,5 +1,7 @@
-# Hello World file
+import random
 
-print("Hello Wrold")
+def add_emoji(text):
+    emojis = ['😀', '😁', '😂', '😊', '😋', '😎', '😍', '😇']
+    return text + random.choice(emojis)
 
-#Edn
+print(add_emoji("Hello World"))
