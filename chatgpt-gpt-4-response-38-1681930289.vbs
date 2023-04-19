@@ -1,0 +1,52 @@
+Here is a simple VBA script for Excel that accepts the English name of one of the colors of the rainbow and sets the cell that contains that value to that background color.
+
+```vba
+Sub SetRainbowColor()
+    
+    Dim ws As Worksheet
+    Dim cell As Range
+    Dim colorName As String
+    
+    Set ws = ThisWorkbook.Worksheets("Sheet1") ' Replace Sheet1 with the name of your sheet
+    
+    colorName = InputBox("Please enter the color name (English) of the rainbow: ")
+    
+    For Each cell In ws.UsedRange
+        If LCase(cell.Value) = LCase(colorName) Then
+            Select Case LCase(colorName)
+                Case "red"
+                    cell.Interior.Color = RGB(255, 0, 0)
+                Case "orange"
+                    cell.Interior.Color = RGB(255, 165, 0)
+                Case "yellow"
+                    cell.Interior.Color = RGB(255, 255, 0)
+                Case "green"
+                    cell.Interior.Color = RGB(0, 128, 0)
+                Case "blue"
+                    cell.Interior.Color = RGB(0, 0, 255)
+                Case "indigo"
+                    cell.Interior.Color = RGB(75, 0, 130)
+                Case "violet"
+                    cell.Interior.Color = RGB(148, 0, 211)
+                Case Else
+                    MsgBox "Invalid color name. Please enter a color of the rainbow.", vbExclamation, "Invalid Color"
+                    Exit Sub
+            End Select
+        End If
+    Next cell
+
+    MsgBox "Color applied successfully.", vbInformation, "Success"
+
+End Sub
+```
+
+To run this script:
+
+1. Open your Excel workbook and press `Alt + F11` to open the Visual Basic for Applications (VBA) editor
+2. Go to `Insert > Module` to insert a new module
+3. Copy and paste the code above into the newly created module
+4. Close the VBA editor by clicking the `X` button or pressing `Alt + Q`
+5. Press `Alt + F8` to open the "Macro" dialog box, select `SetRainbowColor`, and click the "Run" button
+6. Enter the English name of one of the colors of the rainbow when prompted, and then click "OK"
+
+The script will search the sheet for the specified color name and set the background color of the cell accordingly.
