@@ -1,0 +1,48 @@
+First, create a function that converts the English name of the color to its corresponding color code:
+
+```VB
+Function ColorCode(colorName As String) As Long
+    Select Case colorName
+        Case "Red"
+            ColorCode = RGB(255, 0, 0)
+        Case "Orange"
+            ColorCode = RGB(255, 165, 0)
+        Case "Yellow"
+            ColorCode = RGB(255, 255, 0)
+        Case "Green"
+            ColorCode = RGB(0, 255, 0)
+        Case "Blue"
+            ColorCode = RGB(0, 0, 255)
+        Case "Indigo"
+            ColorCode = RGB(75, 0, 130)
+        Case "Violet"
+            ColorCode = RGB(238, 130, 238)
+        Case Else
+            ColorCode = xlColorIndexNone
+    End Select
+End Function
+```
+
+Next, create a macro that prompts the user for the color name, and then applies the color to the active cell:
+
+```VB
+Sub SetRainbowColor()
+    Dim colorName As String
+    Dim colorCode As Long
+    
+    'Prompt user for color name
+    colorName = InputBox("Please enter the English name of a color of the rainbow.")
+    
+    'Convert color name to color code
+    colorCode = ColorCode(colorName)
+    
+    'Apply color to active cell
+    If colorCode <> xlColorIndexNone Then
+        ActiveCell.Interior.Color = colorCode
+    Else
+        MsgBox "Invalid color name. Please enter a valid color of the rainbow."
+    End If
+End Sub
+```
+
+To use the script, simply run the SetRainbowColor macro and enter the English name of one of the colors of the rainbow when prompted. The active cell will then be set to that background color.
