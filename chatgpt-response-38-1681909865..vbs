@@ -1,0 +1,36 @@
+Option Explicit
+
+Sub RainbowColors()
+
+    'Declaring the variables
+    Dim ColorName As String
+    Dim ColorIndex As Variant
+    
+    'Prompt user to enter the color name
+    ColorName = InputBox("Enter the color name of the rainbow:", "Rainbow Colors")
+    
+    'Check if the color name entered by user is valid
+    Select Case LCase(ColorName)
+        Case "red"
+            ColorIndex = 3 'Red color index is 3
+        Case "orange"
+            ColorIndex = 45 'Orange color index is 45
+        Case "yellow"
+            ColorIndex = 6 'Yellow color index is 6
+        Case "green"
+            ColorIndex = 50 'Green color index is 50
+        Case "blue"
+            ColorIndex = 23 'Blue color index is 23
+        Case "indigo"
+            ColorIndex = 55 'Indigo color index is 55
+        Case "violet"
+            ColorIndex = 13 'Violet color index is 13
+        Case Else
+            MsgBox "Invalid color name. Please enter a valid color name of the rainbow.", vbCritical, "Rainbow Colors"
+            Exit Sub
+    End Select
+    
+    'Set the background color of the active cell to the selected color
+    ActiveCell.Interior.ColorIndex = ColorIndex
+    
+End Sub
