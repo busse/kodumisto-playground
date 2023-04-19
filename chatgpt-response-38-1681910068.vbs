@@ -1,0 +1,41 @@
+Here's the script:
+
+Sub RainbowColors()
+
+Dim colorName As String
+
+colorName = InputBox("Enter the name of a color of the rainbow:")
+
+Select Case LCase(colorName)
+    Case "red"
+        ActiveCell.Interior.Color = RGB(255, 0, 0)
+    Case "orange"
+        ActiveCell.Interior.Color = RGB(255, 165, 0)
+    Case "yellow"
+        ActiveCell.Interior.Color = RGB(255, 255, 0)
+    Case "green"
+        ActiveCell.Interior.Color = RGB(0, 255, 0)
+    Case "blue"
+        ActiveCell.Interior.Color = RGB(0, 0, 255)
+    Case "indigo"
+        ActiveCell.Interior.Color = RGB(75, 0, 130)
+    Case "violet"
+        ActiveCell.Interior.Color = RGB(238, 130, 238)
+    Case Else
+        MsgBox "Invalid color name. Please enter a valid color of the rainbow."
+End Select
+
+End Sub
+
+How to use the script:
+
+1. Open an Excel workbook.
+2. Select the cell where you want to apply the background color.
+3. Press Alt + F11 to open the Visual Basic Editor.
+4. In the Project Explorer pane, expand the Microsoft Excel Objects node and double-click the Sheet1 (or any sheet that you want to use) module.
+5. Copy and paste the script into the blank code window on the right-hand side.
+6. Save the workbook as a macro-enabled workbook (.xlsm or .xlsb) if prompted.
+7. Close the Visual Basic Editor window and return to the worksheet.
+8. Press Alt + F8 to open the Macro dialog box.
+9. Select the RainbowColors macro and click Run.
+10. Enter the name of a color of the rainbow in the input box and click OK. The cell's background color should change to the corresponding color.
