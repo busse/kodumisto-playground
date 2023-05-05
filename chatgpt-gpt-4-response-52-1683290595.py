@@ -1,0 +1,33 @@
+To accomplish this task, we can use the math.ceil function in Python's math module to round up the division result. Below is a Python script containing a function that calculates the number of cases needed:
+
+```python
+import math
+
+def calculate_cases_sold(bottles_sold: int) -> int:
+    """
+    Calculates the number of cases of hull cleaner sold based on the number of bottles sold.
+
+    Args:
+        bottles_sold: The number of bottles of hull cleaner sold.
+
+    Returns:
+        The number of cases of hull cleaner sold.
+    """
+    cases_sold = math.ceil(bottles_sold / 12)
+    return cases_sold
+
+# Example usage
+bottles_sold = 130  # Replace this with the actual number of bottles sold in a given week
+cases_sold = calculate_cases_sold(bottles_sold)
+print(f"Cases of hull cleaner sold: {cases_sold}")
+```
+
+Replace the `bottles_sold` variable with the actual number of bottles sold in a given week to calculate the cases sold. The script will round up if there is any remainder greater than 0.
+
+Remember to install the math module if you haven't already done so by running:
+
+```
+pip install math
+```
+
+in your command prompt or terminal.
