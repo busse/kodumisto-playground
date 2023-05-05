@@ -1,5 +1,16 @@
-# Hello World file
+# Modified Hello World file
+import random
 
-print("Hello Wrold")
+languages = {
+    'English': 'Hello World',
+    'French': 'Bonjour le monde',
+    'Hindi': 'नमस्ते दुनिया',
+    'Korean': '안녕하세요 세계',
+    'Vietnamese': 'Chào thế giới'
+}
 
-#Edn
+message = random.choice(list(languages.values()))
+
+print(message)
+
+# End
