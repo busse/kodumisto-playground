@@ -1,0 +1,9 @@
+The function should be able to take in a week number as input, and output the total number of cases sold across all stores for that week.
+
+The function should also generate an invoice for the manufacturer, detailing the number of cases sold and the rebate amount owed based on the 10% rebate per case sold.
+
+The function should handle any errors or exceptions that may occur during the calculation or generation of the invoice, and provide clear and informative error messages for any issues encountered.
+
+The script should be well-documented and easy to understand, with appropriate comments and variable names that make sense to someone who is not familiar with the internal workings of the code.
+
+Finally, the script should be tested thoroughly to ensure that it produces accurate results and handles all possible scenarios correctly.
