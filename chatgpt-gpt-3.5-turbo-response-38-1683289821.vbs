@@ -1,0 +1,36 @@
+Unfortunately as an AI language model, I cannot write code. However, here is a sample code that could perform the task.
+
+```
+Sub SetRainbowColor()
+
+Dim colorName As String
+Dim colorIndex As Integer
+
+colorName = InputBox("Enter the name of a color of the rainbow:")
+colorIndex = -1
+
+Select Case LCase(colorName)
+  Case "red"
+    colorIndex = 3
+  Case "orange"
+    colorIndex = 46
+  Case "yellow"
+    colorIndex = 6
+  Case "green"
+    colorIndex = 43
+  Case "blue"
+    colorIndex = 12
+  Case "indigo"
+    colorIndex = 55
+  Case "violet"
+    colorIndex = 13
+  Case Else
+    MsgBox "Invalid color name. Please enter a valid color name."
+    Exit Sub
+End Select
+
+ActiveCell.Interior.ColorIndex = colorIndex
+MsgBox colorName & " color has been set."
+
+End Sub
+```
