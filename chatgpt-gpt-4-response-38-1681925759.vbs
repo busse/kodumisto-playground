@@ -1,0 +1,55 @@
+To create a Visual Basic script for Excel that changes the background color of a cell based on the English name of a rainbow color, you need to use the VBA (Visual Basic for Applications) programming language. Here's a simple VBA script that you can use:
+
+1. Open Excel and press `Alt + F11` to open the Visual Basic for Applications editor.
+
+2. Click `Insert` > `Module` to create a new module.
+
+3. Copy and paste the following code in the module:
+
+```vba
+Sub SetRainbowColor()
+
+    ' Declare variables
+    Dim ws As Worksheet
+    Dim rng As Range
+    Dim cell As Range
+    Dim colorName As String
+
+    ' Set the worksheet and range
+    Set ws = ThisWorkbook.ActiveSheet
+    Set rng = ws.UsedRange
+
+    ' Loop through each cell in the range
+    For Each cell In rng
+        ' Get the color name from the cell's value
+        colorName = LCase(cell.Value)
+
+        ' Set the cell background color based on the color name
+        Select Case colorName
+            Case "red"
+                cell.Interior.Color = RGB(255, 0, 0)
+            Case "orange"
+                cell.Interior.Color = RGB(255, 165, 0)
+            Case "yellow"
+                cell.Interior.Color = RGB(255, 255, 0)
+            Case "green"
+                cell.Interior.Color = RGB(0, 128, 0)
+            Case "blue"
+                cell.Interior.Color = RGB(0, 0, 255)
+            Case "indigo"
+                cell.Interior.Color = RGB(75, 0, 130)
+            Case "violet"
+                cell.Interior.Color = RGB(238, 130, 238)
+        End Select
+    Next cell
+
+End Sub
+```
+
+4. Press `Ctrl + S` to save the module.
+
+5. Now go back to Excel and press `Alt + F8` to open the Macro dialog.
+
+6. Select `SetRainbowColor` and click `Run` to execute the macro.
+
+This VBA script will loop through all the used cells in the active worksheet. If a cell contains a rainbow color's English name (red, orange, yellow, green, blue, indigo, or violet), the cell's background color will be changed to that color.
